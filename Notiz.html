@@ -1,0 +1,171 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Notiz</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="logo.png" >
+                <span>Notiz</span>
+            </div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">My Notes</a></li>
+                <li><a href="#">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Welcome to Notiz</h1>
+            <p>Your favorite place to take and organize notes.</p>
+            <button id="startButton">Get Started</button>
+        </section>
+
+        <section class="notes">
+            <h2>My Notes</h2>
+            <div class="note-container">
+                <!-- Notes will be dynamically added here using JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Notiz</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+<style>
+/* Reset some default styles */
+body, h1, h2, p, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #111;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+}
+
+nav .logo img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+main {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 20px;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 0;
+    background-image: url('hero-background.jpg');
+    background-size: cover;
+    color: #fff;
+}
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.hero button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #e50914;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.notes {
+    margin-top: 40px;
+}
+
+.note-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.note {
+    width: calc(33.33% - 20px);
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+}
+
+</style>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const startButton = document.getElementById('startButton');
+    const noteContainer = document.querySelector('.note-container');
+
+    startButton.addEventListener('click', function () {
+        // Simulate adding a note
+        const note = document.createElement('div');
+        note.classList.add('note');
+        note.textContent = 'This is a sample note.';
+        noteContainer.appendChild(note);
+    });
+});
+
+</script>
+</html>
